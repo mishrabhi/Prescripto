@@ -19,3 +19,6 @@
 
 - **React JS** - A JavaScript library for building user interfaces.
 - **Tailwind CSS** - A utility-first CSS framework for styling.
+
+## Screenshots
+![Image](https://github.com/user-attachments/assets/2b5bc89f-3729-4081-a271-fc7176d75f13)
