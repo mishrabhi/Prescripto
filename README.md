@@ -1,35 +1,133 @@
-# Online Doctor Appointment Booking Website
+# Prescripto - Online Doctor Appointment Booking System
 
-[Click here to view the deployed website](https://prescripto-vert.vercel.app/)
+## Overview
 
-- This is an online appointment booking website where users can browse and filter doctors by their specialties, choose a date and time slot within a 7-day window, and book an appointment.
-- The frontend of the app is built using React JS and Tailwind CSS for a seamless and responsive user experience.
+Prescripto is a full-stack web application that allows users to book online doctor appointments in real-time. Users can sign up, log in, select a doctor, and schedule appointments. Additionally, doctors and administrators have dedicated dashboards to manage bookings and availability.
 
-## Features
+## Repository Structure
 
-- **Doctor Filtering:** Users can browse a list of doctors and filter them by their specialty (e.g., Cardiologist, Dermatologist, etc.).
-- **Appointment Scheduling:** Users can select an available date and time slot within a 7-day window for booking an appointment with the doctor of their choice.
-- **Responsive Design:** The app is fully responsive and works well on mobile devices, tablets, and desktop computers.
-- **Real-Time Availability:** Users can see available appointment slots in real-time.
-- **User Authentication:** Users can create an account, log in, and manage their appointments.
+This project is divided into three separate repositories:
 
-### Tech Stack
+1. **Frontend (Client)** - This repository contains the user interface built with React and Vite.
+2. **Backend (API Server)** - The backend is developed using Node.js, Express, and MongoDB.  
+   👉 [Visit Backend Repository](https://github.com/mishrabhi/backend-prescripto)
+3. **Admin Panel** - The admin dashboard for managing doctors and appointments.  
+   👉 [Visit Admin Panel Repository](https://github.com/mishrabhi/admin-prescripto)
 
-**Frontend:**
+## Tech Stack
 
-- **React JS** - A JavaScript library for building user interfaces.
-- **Tailwind CSS** - A utility-first CSS framework for styling.
+- **Frontend:** React.js (Vite), Tailwind CSS, Cloudinary (for image uploads)
+- **Backend:** Node.js, Express.js, MongoDB, JWT Authentication
+- **Admin Panel:** React.js (Vite), Tailwind CSS, Role-based authentication
 
-<<<<<<< HEAD
+## Features:
 
-## Screenshot
+**User Features**
 
-=======
+- Sign up and log in with authentication (JWT-based).
+- Browse and select doctors based on specialty.
+- Book appointments based on real-time availability.
+- View and manage booked appointments.
+- Update profile details, including profile pictures (uploaded via Cloudinary).
 
-## Screenshots
+**Doctor Panel**
 
-![Image](https://github.com/user-attachments/assets/2b5bc89f-3729-4081-a271-fc7176d75f13)
+- Log in with credentials.
+- View appointments assigned to them.
+- Mark appointments as completed or canceled.
+- View total income earned from completed appointments.
+- Update their availability status.
 
-> > > > > > > 1cdc54618822c757f26f6cbb99e47c6d1f0b11a2
+**Admin Panel**
 
-Testing to check if there is no merge conflict.
+- Log in with admin credentials.
+- View a dashboard displaying appointments for all doctors.
+- Add new doctors to the platform.
+- Cancel appointments for any doctor.
+- Update doctors’ availability status.
+
+## Installation & Setup
+
+- **Frontend:**
+
+1. **Clone the Repository**
+
+```
+git clone https://github.com/mishrabhi/Prescripto.git
+cd frontend
+```
+
+2. **Install Dependencies:**
+
+```
+npm install
+```
+
+3. Create a .env file:
+
+```
+VITE_BACKEND_URL= your_backend_url
+```
+
+4. Start the Application:
+
+```
+npm run dev
+```
+
+- **Backend:**
+
+1. **Clone the Repository**
+
+```
+git clone https://github.com/mishrabhi/backend-prescripto.git
+cd backend
+```
+
+2. **Install dependencies:**
+
+```
+npm install
+```
+
+3. Create a .env file:
+
+```
+CLOUDINARY_NAME = 'your_cloudinary_name'
+CLOUDINARY_API_KEY = 'cloudinary_api_key'
+CLOUDINARY_SECRET_KEY = "cloudinary_secret_key"
+JWT_SECRET = "jwt_secret"
+```
+
+4. Start the Application:
+
+```
+node server.js
+```
+
+- **Admin Panel:**
+
+1. **Clone the repository**
+
+```
+git clone https://github.com/mishrabhi/admin-prescripto.git
+cd admin
+```
+
+2. **Install dependencies:**
+
+```
+npm install
+```
+
+3. Create a .env file:
+
+```
+VITE_BACKEND_URL = 'your_backend_url'
+```
+
+4. Start the Application:
+
+```
+npm run dev
+```
