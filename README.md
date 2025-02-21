@@ -21,8 +21,13 @@
 - **Tailwind CSS** - A utility-first CSS framework for styling.
 
 <<<<<<< HEAD
+
 ## Screenshot
+
 =======
+
 ## Screenshots
+
 ![Image](https://github.com/user-attachments/assets/2b5bc89f-3729-4081-a271-fc7176d75f13)
->>>>>>> 1cdc54618822c757f26f6cbb99e47c6d1f0b11a2
+
+> > > > > > > 1cdc54618822c757f26f6cbb99e47c6d1f0b11a2
