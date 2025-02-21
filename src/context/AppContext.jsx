@@ -12,7 +12,7 @@ const AppContextProvider = (props) => {
     localStorage.getItem("token") ? localStorage.getItem("token") : false
   );
 
-  const [userData, setUserData] = useState(false);
+  const [userData, setUserData] = useState(null);
 
   const getDoctorsData = async () => {
     try {
@@ -34,7 +34,7 @@ const AppContextProvider = (props) => {
         headers: { token },
       });
       if (data.success) {
-        setUserData(data.userData);
+        setUserData(data.userData || {});
       } else {
         toast.error(data.message);
       }
@@ -64,7 +64,7 @@ const AppContextProvider = (props) => {
     if (token) {
       loadUserProfileData();
     } else {
-      setUserData(false);
+      setUserData(null);
     }
   }, [token]);
 

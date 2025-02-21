@@ -16,10 +16,10 @@ const MyProfile = () => {
     try {
       const formData = new FormData();
       formData.append("name", userData.name);
-      formData.append("phone", userData.phone);
-      formData.append("address", JSON.stringify(userData.address));
-      formData.append("gender", userData.gender);
-      formData.append("dob", userData.dob);
+      formData.append("phone", userData?.phone || "");
+      formData.append("address", JSON.stringify(userData?.address || {}));
+      formData.append("gender", userData?.gender || "");
+      formData.append("dob", userData?.dob || "");
       image && formData.append("image", image);
 
       const { data } = await axios.post(
@@ -95,13 +95,13 @@ const MyProfile = () => {
               <input
                 className="bg-gray-100 max-w-52"
                 type="text"
-                value={userData.phone}
+                value={userData?.phone || ""}
                 onChange={(e) =>
                   setUserData((prev) => ({ ...prev, phone: e.target.value }))
                 }
               />
             ) : (
-              <p className="text-blue-400">{userData.phone}</p>
+              <p className="text-blue-400">{userData?.phone || ""}</p>
             )}
             <p className="font-medium">Address:</p>
             {isEdit ? (
@@ -114,7 +114,7 @@ const MyProfile = () => {
                       address: { ...prev.address, line1: e.target.value },
                     }))
                   }
-                  value={userData.address.line1}
+                  value={userData?.address?.line1 || ""}
                   type="text"
                 />
                 <br />
@@ -126,15 +126,15 @@ const MyProfile = () => {
                       address: { ...prev.address, line2: e.target.value },
                     }))
                   }
-                  value={userData.address.line2}
+                  value={userData?.address?.line2 || ""}
                   type="text"
                 />
               </p>
             ) : (
               <p className="text-gray-500 ">
-                {userData.address.line1}
+                {userData?.address?.line1 || ""}
                 <br />
-                {userData.address.line2}
+                {userData?.address?.line2 || ""}
               </p>
             )}
           </div>
@@ -149,13 +149,13 @@ const MyProfile = () => {
                 onChange={(e) =>
                   setUserData((prev) => ({ ...prev, gender: e.target.value }))
                 }
-                value={userData.gender}
+                value={userData?.gender || ""}
               >
                 <option value="Male">Male</option>
                 <option value="Female">Female</option>
               </select>
             ) : (
-              <p className="text-gray-400">{userData.gender}</p>
+              <p className="text-gray-400">{userData?.gender || ""}</p>
             )}
             <p className="font-medium ">BirthDay:</p>
             {isEdit ? (
@@ -165,10 +165,10 @@ const MyProfile = () => {
                 onChange={(e) =>
                   setUserData((prev) => ({ ...prev, dob: e.target.value }))
                 }
-                value={userData.dob}
+                value={userData?.dob || ""}
               />
             ) : (
-              <p className="text-gray-400">{userData.dob}</p>
+              <p className="text-gray-400">{userData?.dob || ""}</p>
             )}
           </div>
         </div>
